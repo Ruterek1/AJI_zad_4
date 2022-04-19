@@ -1,0 +1,81 @@
+@hostname = http://localhost:8080/api
+
+get {{hostname}}/products
+
+###
+
+get {{hostname}}/products/99
+
+###
+
+post {{hostname}}/products
+Content-Type: application/json
+
+{
+  "name": "xyzzy",
+  "description": "gesgs",
+  "unit_price": 3.21,
+  "unit_weight": 21,
+  "category_id": 2
+}
+
+###
+
+put {{hostname}}/products/16
+Content-Type: application/json
+
+{
+  "name": "9ub",
+  "description": "rdhh",
+  "unit_price": 214.75,
+  "unit_weight": 0.678,
+  "category_id": 2
+}
+
+###
+
+get {{hostname}}/categories
+
+###
+
+get {{hostname}}/orders
+
+###
+
+post {{hostname}}/orders
+Content-Type: application/json
+
+{
+  "approval_date": null,
+  "order_status_id": 1,
+  "username": "Jan_Kowalski",
+  "email": "JANJA@mail.com",
+  "phone_number": "762875879",
+  "order_details": [
+    {
+      "product_id": 2,
+      "quantity": 4
+    },
+    {
+      "product_id": 2,
+      "quantity": 3
+    }
+  ]
+}
+
+###
+
+put {{hostname}}/orders/54/status
+Content-Type: application/json
+
+{
+  "status": 0
+}
+
+###
+
+get {{hostname}}/orders/status/4
+
+###
+
+get {{hostname}}/status
